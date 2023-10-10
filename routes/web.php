@@ -70,7 +70,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
     // Define the dashboard.upload route here
     Route::post('/dashboard/upload', [DashboardController::class, 'upload'])->name('dashboard.upload');
 
-  
+
      Route::get('/dashboard/files/{id}/edit', [DashboardController::class, 'editFile'])->name('dashboard.editFile');
 
      Route::put('/dashboard/files/{id}', [DashboardController::class, 'updateFile'])->name('dashboard.updateFile');
@@ -80,16 +80,14 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function(){
     Route::get('/pdf-viewer/{id}', [DashboardController::class, 'showPdfViewer'])->name('pdf-viewer');
 
     Route::get('/admin/master_karyawan/create', [DashboardController::class, 'createEmployeeForm'])->name('dashboard.createEmployeeForm');
-    
+
     Route::post('/admin/master_karyawan/store', [DashboardController::class, 'storeEmployee'])->name('dashboard.storeEmployee');
 
     Route::get('/admin/restore-all', [DashboardController::class, 'restoreAll'])->name('admin.restoreAll');
-    
+
 
     Route::get('admin/student-details/{id}', [StudentController::class, 'showStudentDetails'])->name('student.details');
-   
 
-    
+
+
 });
-
-
